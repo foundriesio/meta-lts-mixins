@@ -15,8 +15,8 @@ GOVERSION = "1.20%"
 
 The patches can be backport from openembedded-core with:
 
- git -C openembedded-core format-patch -1 -o $PWD origin/master -- meta/recipes-devtools/go
- git am --signoff -3 -p4 --directory=recipes-devtools/go-1.20 $PWD/*.patch && rm $PWD/*.patch
+ git -C ../openembedded-core format-patch --stdout -1 origin/master meta/recipes-devtools/go | \
+ git am --signoff -p4 --directory=recipes-devtools/go-1.20
 
 Maintainers:
 Alexander Kanavin <alex@linutronix.de>
